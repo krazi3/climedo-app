@@ -4,7 +4,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { sequelize } = require('./models');
 
-const indexRouter = require('./routes/index');
+const fieldRouter = require('./routes/field');
+const departmentRouter = require('./routes/department');
 
 const app = express();
 
@@ -16,7 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
+app.use('/field', fieldRouter);
+app.use('/department', departmentRouter);
 
 const init = async () => {
   console.log('Checking database connection...');
