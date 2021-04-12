@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently -k -p \"[{name}]\" -n \"Node,Angular\" -c \"green.bold,red.bold\" \"node app.js\" \"cd client && npm start\"",
-    "postinstall": "cd client && npm  i"
+    "postinstall": "cd client && npm  i",
+    "migrate": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "dependencies": {
     "concurrently": "^6.0.1",
