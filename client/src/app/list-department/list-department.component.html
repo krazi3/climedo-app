@@ -1,0 +1,18 @@
+<h4 class="mb-3">Departments</h4>
+<div class="row mb-3">
+  <div class="col-6">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search" (ngModelChange)="getDepartments()">
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary" [routerLink]="['create']">Create New Department</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 mb-3" *ngFor="let department of departments">
+    <div class="card">
+      <div class="card-body">
+        <p>{{department.data.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
